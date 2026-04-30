@@ -93,10 +93,26 @@ assets/pdf/       cv.pdf, paper PDFs, slide decks
 </div>
 ```
 
-### A blog post
+### A blog post (Markdown, with math support)
 
-1. Duplicate `blog/2026-04-30-hello.html`, rename to `blog/YYYY-MM-DD-slug.html`.
-2. Edit the date `<p class="meta">`, `<title>`, and `<h1>`.
+The easiest way: write the post in Markdown and let the site render it.
+
+1. Save the file as `blog/posts/YYYY-MM-DD-slug.md`. The date prefix matters — it's parsed for the post date.
+2. Write standard Markdown. The first `# Heading` becomes the post title.
+3. For math, use KaTeX delimiters:
+   - Inline: `$y_t = \rho y_{t-1} + \varepsilon_t$`
+   - Display: `$$ \mathbb{E}[M_{t+1} R_{t+1}] = 1 $$`
+4. Add one line to the `<ol class="post-list">` in `blog/index.html`:
+   ```html
+   <li>
+     <span class="date">YYYY-MM-DD</span>
+     <span><a href="post.html?p=YYYY-MM-DD-slug">Title</a> — <span class="status">one-line dek.</span></span>
+   </li>
+   ```
+
+The file `blog/post.html` is a generic renderer — it takes `?p=slug`, fetches `posts/slug.md`, runs Markdown + KaTeX in the browser. You never edit `post.html`.
+
+(Plain-HTML posts like `blog/2026-04-30-hello.html` still work; just link to them directly.)
 3. Add a line to the `<ol class="post-list">` in `blog/index.html`.
 
 ## Customization
