@@ -34,7 +34,6 @@ wip.html          drafts in progress
 notes.html        investment memos (titles + mailto)
 blog/index.html   blog post index
 blog/YYYY-MM-DD-slug.html  individual posts
-talks.html        talks and media
 cv.html           HTML CV (+ link to assets/pdf/cv.pdf)
 404.html          custom not-found page
 assets/css/site.css  the only stylesheet
