@@ -6,7 +6,7 @@ $y_t = \rho y_{t-1} + \varepsilon_t$ renders with KaTeX.
 Display math:
 
 $$
-\mathbb{E}\!\left[ M_{t+1} R_{t+1} \right] = 1
+\mathbb{E}_t\left[ M_{t+1} R_{t+1} \right] = 1
 $$
 
 A short list:
